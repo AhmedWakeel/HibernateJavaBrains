@@ -22,5 +22,6 @@
 	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/hibernate-release-5.4.3.Final/lib/required/stax-ex-1.8.jar"/>
 	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/hibernate-release-5.4.3.Final/lib/required/txw2-2.3.1.jar"/>
 	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/hibernate-release-5.4.3.Final/lib/jpa-metamodel-generator/hibernate-jpamodelgen-5.4.3.Final.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/mysql-connector-java.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
