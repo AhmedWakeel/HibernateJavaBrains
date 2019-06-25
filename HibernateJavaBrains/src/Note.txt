@@ -1,2 +1,9 @@
 
 - Hibernate is an ORM tool.
+
+
+@Transient    // if we make any field transient then hibernate will igonre the that field and will not create the column in the table.
+@Temporal(TemporalType.DATE)  // save only date and not time
+@Lob   // by default hibernate uses 255 characters but if want to save more than that then we can use Large object , BLOB binary large object , CLOB character large object
+
+- SessionFactory created only once per application , since it is a very expensive object but we can create session as many we want.

@@ -7,7 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "UserDetails")
@@ -16,8 +20,11 @@ public class UserDetails {
 	@Id
 	@GeneratedValue(strategy =GenerationType.AUTO)
 	private int userId;
+	@Transient    // if we make any field transient then hibernate will igonre the that field and will not create the column in the table.
 	private String userName;
+	@Temporal(TemporalType.DATE)  // save only date and not time
 	private Date joinedDate;
+	@Lob   // by default hibernate uses 255 characters but if want to save more than that then we can use Large object , BLOB binary large object , CLOB character large object
 	private String Address;
 	private String Description;
 	
