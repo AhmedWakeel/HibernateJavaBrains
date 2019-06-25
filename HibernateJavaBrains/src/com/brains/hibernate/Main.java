@@ -1,5 +1,7 @@
 package com.brains.hibernate;
 
+import java.util.Date;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -11,6 +13,9 @@ public class Main {
 	{
 		UserDetails details = new UserDetails();
 		details.setUserName("Malik");
+		details.setAddress("mumbai");
+		details.setDescription("java");
+		details.setJoinedDate(new Date());
 		
 		SessionFactory buildSessionFactory = new Configuration().configure().buildSessionFactory();
 		Session openSession = buildSessionFactory.openSession();
