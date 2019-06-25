@@ -26,5 +26,13 @@ public class Main {
 		transaction.commit();
 		openSession.close();
 		
+		details = null;
+		Session openSession2 = buildSessionFactory.openSession();
+		Transaction beginTransaction = openSession2.beginTransaction();
+		
+		UserDetails userDetails = openSession2.get(UserDetails.class, 1);
+		System.out.println("www  "+userDetails.getAddress());
+		beginTransaction.commit();
+		openSession2.close();
 	}
 }
