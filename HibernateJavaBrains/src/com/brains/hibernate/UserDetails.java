@@ -17,7 +17,8 @@ import javax.persistence.Transient;
 @Table(name = "UserDetails")
 public class UserDetails {
 
-	@Id
+	@Id 
+//	@GeneratedValue // this annotation is used to add values automatically to the primary key column
 	@GeneratedValue(strategy =GenerationType.AUTO)
 	private int userId;
 	@Transient    // if we make any field transient then hibernate will igonre the that field and will not create the column in the table.

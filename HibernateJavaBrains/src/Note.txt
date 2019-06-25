@@ -7,3 +7,4 @@
 @Lob   // by default hibernate uses 255 characters but if want to save more than that then we can use Large object , BLOB binary large object , CLOB character large object
 
 - SessionFactory created only once per application , since it is a very expensive object but we can create session as many we want.
+- @GeneratedValue // this annotation is used to add values automatically to the primary key column
