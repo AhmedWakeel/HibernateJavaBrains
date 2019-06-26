@@ -2,6 +2,8 @@ package com.brains.hibernate;
 
 import java.util.Date;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -31,19 +33,33 @@ public class UserDetails {
 	private String Description;
     
 	@Embedded
-	private  Address address2;
+	private  Address officeAddress;
 	
-	public Address getAddress2() {
-		return address2;
-	}
-	public void setAddress2(Address address2) {
-		this.address2 = address2;
-	}
+	@Embedded
+	@AttributeOverrides({
+		@AttributeOverride(name ="city" , column = @Column(name = "home_Street")),
+		@AttributeOverride(name ="State" , column = @Column(name = "home_State")),
+		@AttributeOverride(name ="pincode" , column = @Column(name = "home_pincode")),
+	})
+	private  Address homeAddress;
+	
 	public String getAddress() {
 		return Address;
 	}
 	public void setAddress(String address) {
 		Address = address;
+	}
+	public Address getOfficeAddress() {
+		return officeAddress;
+	}
+	public void setOfficeAddress(Address officeAddress) {
+		this.officeAddress = officeAddress;
+	}
+	public Address getHomeAddress() {
+		return homeAddress;
+	}
+	public void setHomeAddress(Address homeAddress) {
+		this.homeAddress = homeAddress;
 	}
 	public String getDescription() {
 		return Description;

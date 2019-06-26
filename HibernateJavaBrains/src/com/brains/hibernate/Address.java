@@ -1,12 +1,16 @@
 package com.brains.hibernate;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
 public class Address {
 
+	@Column(name = "office_City")
 	private String city;
+	@Column(name = "office_State")
 	private String State;
+	@Column(name = "office_pincode")
 	private String pincode;
 	public String getCity() {
 		return city;

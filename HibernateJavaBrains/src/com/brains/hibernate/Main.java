@@ -29,7 +29,13 @@ public class Main {
 		address.setPincode("400072");
 		address.setState("maharashtraa");
 		
-		details.setAddress2(address);
+		Address  address2 = new Address();
+		address2.setCity("mumbai1");
+		address2.setPincode("4000721");
+		address2.setState("maharashtraa11");
+		
+		details.setHomeAddress(address);
+		details.setOfficeAddress(address2);
 		
 		SessionFactory buildSessionFactory = new Configuration().configure().buildSessionFactory();
 		Session openSession = buildSessionFactory.openSession();
