@@ -13,3 +13,5 @@
               of the class.
               
 - @Embaddable : this is used on the top the class name to indicate that this entity can be used or store into the another entity
+
+-@EmbeddedId :  if we want to make any Embeddable object as a primary key in a entity class then we have to use @EmbeddedId
