@@ -3,6 +3,7 @@ package com.brains.hibernate;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,7 +29,16 @@ public class UserDetails {
 	@Lob   // by default hibernate uses 255 characters but if want to save more than that then we can use Large object , BLOB binary large object , CLOB character large object
 	private String Address;
 	private String Description;
+    
+	@Embedded
+	private  Address address2;
 	
+	public Address getAddress2() {
+		return address2;
+	}
+	public void setAddress2(Address address2) {
+		this.address2 = address2;
+	}
 	public String getAddress() {
 		return Address;
 	}

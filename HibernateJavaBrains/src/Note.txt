@@ -8,3 +8,8 @@
 
 - SessionFactory created only once per application , since it is a very expensive object but we can create session as many we want.
 - @GeneratedValue // this annotation is used to add values automatically to the primary key column
+
+- @Embedded : this annotation is used to indicate that this entity will be added into the other entity, it is used on the Object variable 
+              of the class.
+              
+- @Embaddable : this is used on the top the class name to indicate that this entity can be used or store into the another entity

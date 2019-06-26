@@ -23,22 +23,22 @@ public class Main {
 		details.setDescription("java");
 		details.setJoinedDate(new Date());
 		
+		
+		Address  address = new Address();
+		address.setCity("mumbai");
+		address.setPincode("400072");
+		address.setState("maharashtraa");
+		
+		details.setAddress2(address);
+		
 		SessionFactory buildSessionFactory = new Configuration().configure().buildSessionFactory();
 		Session openSession = buildSessionFactory.openSession();
-		openSession.beginTransaction();
+		org.hibernate.Transaction beginTransaction = openSession.beginTransaction();
 		
 		openSession.save(details);
-		Transaction transaction = (Transaction) openSession.getTransaction();
-		transaction.commit();
+		beginTransaction.commit();
 		openSession.close();
 		
-		details = null;
-		Session openSession2 = buildSessionFactory.openSession();
-		Transaction beginTransaction = (Transaction) openSession2.beginTransaction();
 		
-		UserDetails userDetails = openSession2.get(UserDetails.class, 1);
-		System.out.println("www  "+userDetails.getAddress());
-		beginTransaction.commit();
-		openSession2.close();
 	}
 }
