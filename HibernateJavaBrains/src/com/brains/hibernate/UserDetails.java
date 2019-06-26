@@ -1,5 +1,7 @@
 package com.brains.hibernate;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -13,11 +15,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+
+import org.hibernate.annotations.CollectionId;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 
 @Entity
 @Table(name = "UserDetails")
@@ -36,10 +44,17 @@ public class UserDetails {
 	private String Description;
     
 	@ElementCollection
-	Set<Address> addresses = new HashSet<>();
+	@JoinTable(name = "USER_ADDRESS" , joinColumns = @JoinColumn(name = "USER_ID"))
+	@GenericGenerator(name = "hilo-gen" , strategy = "hilo")
+	@CollectionId(columns = { @Column(name ="ADDRESS_ID") }, generator = "hilo-gen", type = @Type(type= "long"))
+	Collection<Address> addresses = new ArrayList<>();
 	
-	public Set<Address> getAddresses() {
+	
+	public Collection<Address> getAddresses() {
 		return addresses;
+	}
+	public void setAddresses(Collection<Address> addresses) {
+		this.addresses = addresses;
 	}
 	public void setAddresses(Set<Address> addresses) {
 		this.addresses = addresses;

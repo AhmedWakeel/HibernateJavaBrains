@@ -36,6 +36,7 @@ public class Main {
 		details.getAddresses().add(address);
 		details.getAddresses().add(address2);
 		
+		
 		SessionFactory buildSessionFactory = new Configuration().configure().buildSessionFactory();
 		Session openSession = buildSessionFactory.openSession();
 		org.hibernate.Transaction beginTransaction = openSession.beginTransaction();
