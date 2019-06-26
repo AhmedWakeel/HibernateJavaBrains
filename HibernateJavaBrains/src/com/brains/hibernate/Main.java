@@ -6,7 +6,6 @@ import javax.transaction.HeuristicMixedException;
 import javax.transaction.HeuristicRollbackException;
 import javax.transaction.RollbackException;
 import javax.transaction.SystemException;
-import javax.transaction.Transaction;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -34,8 +33,8 @@ public class Main {
 		address2.setPincode("4000721");
 		address2.setState("maharashtraa11");
 		
-		details.setHomeAddress(address);
-		details.setOfficeAddress(address2);
+		details.getAddresses().add(address);
+		details.getAddresses().add(address2);
 		
 		SessionFactory buildSessionFactory = new Configuration().configure().buildSessionFactory();
 		Session openSession = buildSessionFactory.openSession();

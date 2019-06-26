@@ -1,10 +1,13 @@
 package com.brains.hibernate;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,34 +35,20 @@ public class UserDetails {
 	private String Address;
 	private String Description;
     
-	@Embedded
-	private  Address officeAddress;
+	@ElementCollection
+	Set<Address> addresses = new HashSet<>();
 	
-	@Embedded
-	@AttributeOverrides({
-		@AttributeOverride(name ="city" , column = @Column(name = "home_Street")),
-		@AttributeOverride(name ="State" , column = @Column(name = "home_State")),
-		@AttributeOverride(name ="pincode" , column = @Column(name = "home_pincode")),
-	})
-	private  Address homeAddress;
-	
+	public Set<Address> getAddresses() {
+		return addresses;
+	}
+	public void setAddresses(Set<Address> addresses) {
+		this.addresses = addresses;
+	}
 	public String getAddress() {
 		return Address;
 	}
 	public void setAddress(String address) {
 		Address = address;
-	}
-	public Address getOfficeAddress() {
-		return officeAddress;
-	}
-	public void setOfficeAddress(Address officeAddress) {
-		this.officeAddress = officeAddress;
-	}
-	public Address getHomeAddress() {
-		return homeAddress;
-	}
-	public void setHomeAddress(Address homeAddress) {
-		this.homeAddress = homeAddress;
 	}
 	public String getDescription() {
 		return Description;
