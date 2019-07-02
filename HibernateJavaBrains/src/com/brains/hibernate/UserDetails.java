@@ -44,8 +44,8 @@ public class UserDetails {
 	private String Description;
     
 	@ElementCollection
-	@JoinTable(name = "USER_ADDRESS" , joinColumns = @JoinColumn(name = "USER_ID"))
-	@GenericGenerator(name = "hilo-gen" , strategy = "hilo")
+	@JoinTable(name = "ADDRESS" , joinColumns = @JoinColumn(name = "USER_ID"))
+	@GenericGenerator(name = "sequence-gen" , strategy = "sequence")
 	@CollectionId(columns = { @Column(name ="ADDRESS_ID") }, generator = "hilo-gen", type = @Type(type= "long"))
 	Collection<Address> addresses = new ArrayList<>();
 	

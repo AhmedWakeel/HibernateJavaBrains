@@ -9,6 +9,7 @@ import javax.transaction.SystemException;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 public class Main {
@@ -39,10 +40,10 @@ public class Main {
 		
 		SessionFactory buildSessionFactory = new Configuration().configure().buildSessionFactory();
 		Session openSession = buildSessionFactory.openSession();
-		org.hibernate.Transaction beginTransaction = openSession.beginTransaction();
+		openSession.beginTransaction();
 		
 		openSession.save(details);
-		beginTransaction.commit();
+		 openSession.getTransaction().commit();
 		openSession.close();
 		
 		
