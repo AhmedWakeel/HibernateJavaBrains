@@ -2,6 +2,7 @@ package com.brains.hibernate;
 
 import java.util.Date;
 
+import javax.persistence.FetchType;
 import javax.transaction.HeuristicMixedException;
 import javax.transaction.HeuristicRollbackException;
 import javax.transaction.RollbackException;
@@ -43,9 +44,13 @@ public class Main {
 		openSession.beginTransaction();
 		
 		openSession.save(details);
-		 openSession.getTransaction().commit();
+		openSession.getTransaction().commit();
 		openSession.close();
-		
+		 
+		openSession = buildSessionFactory.openSession();
+		UserDetails userDetails1 = openSession.get(UserDetails.class, 1);
+		openSession.close(); // if we close the session and removes (fetch=FetchType.EAGER) from UserDetails.java then we will get LazyInitialization exception
+		System.out.println(userDetails1.getAddresses().size());
 		
 	}
 }
