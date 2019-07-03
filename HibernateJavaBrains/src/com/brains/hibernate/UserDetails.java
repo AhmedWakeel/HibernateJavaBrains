@@ -30,7 +30,7 @@ import org.hibernate.annotations.Type;
 @Entity
 @Table(name = "UserDetails")
 public class UserDetails {
-
+ 
 	@Id 
 //	@GeneratedValue // this annotation is used to add values automatically to the primary key column
 	@GeneratedValue(strategy =GenerationType.AUTO)
