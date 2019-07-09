@@ -14,28 +14,26 @@ public class Main {
 	public static void main(String[] args) throws SecurityException, RollbackException, HeuristicMixedException, HeuristicRollbackException, SystemException
 	{
 	
+		Vehicle vehicle = new Vehicle();
+		vehicle.setVehicleName("Car");
 		
-		UserDetails details = new UserDetails();
-		details.setUserName("Malik");
+		TwoWheeler bike = new TwoWheeler();
+		bike.setVehicleName("Bike");
+		bike.setSteeringHandler("Bike Steering Handle");
 		
-		
-		Vehicle vehicle1 = new Vehicle();
-		vehicle1.setVehicleName("TATA");
-		
-		Vehicle vehicle2 = new Vehicle();
-		vehicle2.setVehicleName("TATA1");
-		
-		details.getCollect().add(vehicle1);
-		details.getCollect().add(vehicle2);
+		FourWheeler car = new FourWheeler();
+		car.setVehicleName("Car");
+		car.setSteeringWheel("porse Steering Wheel");
 		
 		
 		SessionFactory buildSessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = buildSessionFactory.openSession();
 		session.beginTransaction();
 		
-//		session.save(details);
-		session.persist(details);
-	
+		session.save(vehicle);
+		session.save(car);
+		session.save(bike);
+		
 		session.getTransaction().commit();
 		session.close();
 		 
