@@ -17,17 +17,25 @@ public class Main {
 		UserDetails details = new UserDetails();
 		details.setUserName("Malik");
 		
-		Vehicle vehicle = new Vehicle();
-		vehicle.setVehicleName("TATA");
+		Vehicle vehicle1 = new Vehicle();
+		vehicle1.setVehicleName("TATA");
 		
-       details.setVehicle(vehicle);		
+		Vehicle vehicle2 = new Vehicle();
+		vehicle2.setVehicleName("TATA1");
+		
+		details.getCollect().add(vehicle1);
+		details.getCollect().add(vehicle2);
+		
+		vehicle1.setDetails(details);
+		vehicle2.setDetails(details);
 		
 		SessionFactory buildSessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = buildSessionFactory.openSession();
 		session.beginTransaction();
 		
 		session.save(details);
-		session.save(vehicle);
+		session.save(vehicle1);
+		session.save(vehicle2);
 		session.getTransaction().commit();
 		session.close();
 		 
