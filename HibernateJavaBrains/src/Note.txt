@@ -20,4 +20,6 @@
                        the new table name will be the combination of the current Entity class name and collection variable name
                        
 - @JoinTable(name = "USER_ADDRESS" , joinColumns = @JoinColumn(name = "USER_ID")) : this annotation will create the table of the name specified in the 
-                    name , and columns                       
+                    name , and columns     
+                    
+- @MappedBy  : this annotation is used to igonre to create the table in the database 
