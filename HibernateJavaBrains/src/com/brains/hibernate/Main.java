@@ -14,6 +14,7 @@ public class Main {
 	public static void main(String[] args) throws SecurityException, RollbackException, HeuristicMixedException, HeuristicRollbackException, SystemException
 	{
 	
+		
 		UserDetails details = new UserDetails();
 		details.setUserName("Malik");
 		
@@ -28,16 +29,12 @@ public class Main {
 		details.getCollect().add(vehicle2);
 		
 		
-		vehicle2.getUser().add(details);
-		
-		
 		SessionFactory buildSessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = buildSessionFactory.openSession();
 		session.beginTransaction();
 		
-		session.save(details);
-		session.save(vehicle1);
-		session.save(vehicle2);
+//		session.save(details);
+		session.persist(details);
 	
 		session.getTransaction().commit();
 		session.close();
