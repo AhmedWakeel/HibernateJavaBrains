@@ -39,11 +39,11 @@ public class Main {
 		details1.getCollect().add(vehicle3);
 		details1.getCollect().add(vehicle4);
 		
-		vehicle1.setDetails(details);
-		vehicle2.setDetails(details);
+		vehicle1.getUser().add(details1);
+		vehicle2.getUser().add(details);
 		
-		vehicle3.setDetails(details1);
-		vehicle4.setDetails(details1);
+		vehicle3.getUser().add(details1);
+		vehicle4.getUser().add(details);
 		
 		SessionFactory buildSessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = buildSessionFactory.openSession();

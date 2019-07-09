@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,7 +22,7 @@ public class UserDetails {
 //	@Transient    // if we make any field transient then hibernate will igonre the that field and will not create the column in the table.
 	private String userName;
 	
-	@OneToMany(mappedBy="details")
+	@ManyToMany
     private Collection<Vehicle> collect = new ArrayList<Vehicle>(); 
 	
 	public Collection<Vehicle> getCollect() {
