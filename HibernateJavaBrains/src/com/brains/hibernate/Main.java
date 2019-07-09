@@ -17,6 +17,16 @@ public class Main {
 		UserDetails details = new UserDetails();
 		details.setUserName("Malik");
 		
+		UserDetails details1 = new UserDetails();
+		details1.setUserName("Ahmed");
+		
+		Vehicle vehicle4 = new Vehicle();
+		vehicle4.setVehicleName("TATA1");
+		
+		Vehicle vehicle3 = new Vehicle();
+		vehicle3.setVehicleName("TATA");
+		
+		
 		Vehicle vehicle1 = new Vehicle();
 		vehicle1.setVehicleName("TATA");
 		
@@ -26,8 +36,14 @@ public class Main {
 		details.getCollect().add(vehicle1);
 		details.getCollect().add(vehicle2);
 		
+		details1.getCollect().add(vehicle3);
+		details1.getCollect().add(vehicle4);
+		
 		vehicle1.setDetails(details);
 		vehicle2.setDetails(details);
+		
+		vehicle3.setDetails(details1);
+		vehicle4.setDetails(details1);
 		
 		SessionFactory buildSessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = buildSessionFactory.openSession();
@@ -36,6 +52,11 @@ public class Main {
 		session.save(details);
 		session.save(vehicle1);
 		session.save(vehicle2);
+		
+		session.save(details1);
+		session.save(vehicle3);
+		session.save(vehicle4);
+		
 		session.getTransaction().commit();
 		session.close();
 		 
