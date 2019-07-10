@@ -26,7 +26,6 @@
         
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
 
-        <!-- <mapping class="com.brains.hibernate.UserDetails"/> -->
         <mapping class="com.brains.hibernate.Vehicle"/>
         <mapping class="com.brains.hibernate.FourWheeler"/>
         <mapping class="com.brains.hibernate.TwoWheeler"/>

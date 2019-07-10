@@ -22,7 +22,7 @@ public class Main {
 		bike.setSteeringHandler("Bike Steering Handle");
 		
 		FourWheeler car = new FourWheeler();
-		car.setVehicleName("Car");
+		car.setVehicleName("BMW");
 		car.setSteeringWheel("porse Steering Wheel");
 		
 		
