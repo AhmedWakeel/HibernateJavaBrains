@@ -22,13 +22,16 @@
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
         
         <!-- drops the existing table and creates the new table  -->
-        <property name="hbm2ddl.auto">create</property>
+        <property name="hbm2ddl.auto">update</property>
         
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
 
+
+        <mapping class="com.brains.crud.UserDetails"/>
+        <!-- 
         <mapping class="com.brains.hibernate.Vehicle"/>
         <mapping class="com.brains.hibernate.FourWheeler"/>
         <mapping class="com.brains.hibernate.TwoWheeler"/>
-
+        -->
     </session-factory>
 </hibernate-configuration>

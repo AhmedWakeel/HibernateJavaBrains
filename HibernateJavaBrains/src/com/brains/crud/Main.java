@@ -1,4 +1,4 @@
-package com.brains.hibernate;
+package com.brains.crud;
 
 import javax.transaction.HeuristicMixedException;
 import javax.transaction.HeuristicRollbackException;
@@ -13,26 +13,24 @@ public class Main {
 
 	public static void main(String[] args) throws SecurityException, RollbackException, HeuristicMixedException, HeuristicRollbackException, SystemException
 	{
-	
-		Vehicle vehicle = new Vehicle();
-		vehicle.setVehicleName("Car");
-		
-		TwoWheeler bike = new TwoWheeler();
-		bike.setVehicleName("Bike");
-		bike.setSteeringHandler("Bike Steering Handle");
-		
-		FourWheeler car = new FourWheeler();
-		car.setVehicleName("BMW");
-		car.setSteeringWheel("porse Steering Wheel");
-		
 		
 		SessionFactory buildSessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = buildSessionFactory.openSession();
 		session.beginTransaction();
+		/*
+		for(int i =1;i<=10;i++)
+		{
+			UserDetails details = new UserDetails();
+			details.setUserName("User :"+i);
+			session.save(details);
+		}*/
 		
-		session.save(vehicle);
-		session.save(car);
-		session.save(bike);
+		UserDetails userDetails = session.get(UserDetails.class, 5);
+		System.out.println(userDetails.getUserName());
+		userDetails.setUserName("wwwww");
+		session.update(userDetails);
+//		session.delete(userDetails);
+		
 		
 		session.getTransaction().commit();
 		session.close();
