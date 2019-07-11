@@ -22,8 +22,13 @@ public class Main {
 		session.beginTransaction();
 	
 //		Query<UserDetails> createQuery = session.createQuery("from UserDetails");
-		Query<UserDetails> createQuery = session.createQuery("from UserDetails where userId > 5");
-		List<UserDetails> list = createQuery.list();
+//		Query<UserDetails> createQuery = session.createQuery("from UserDetails where userId > 5");
+//		Query<String> createQuery = session.createQuery("select userId from UserDetails");
+		Query<String> createQuery = session.createQuery("select max(userId) from UserDetails");
+		createQuery.setFirstResult(4);
+		createQuery.setMaxResults(4);
+		
+		List<String> list = createQuery.list();
 		
 		session.getTransaction().commit();
 		session.close(); 
