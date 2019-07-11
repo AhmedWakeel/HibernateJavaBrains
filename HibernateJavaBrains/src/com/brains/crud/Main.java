@@ -1,5 +1,7 @@
 package com.brains.crud;
 
+import java.util.List;
+
 import javax.transaction.HeuristicMixedException;
 import javax.transaction.HeuristicRollbackException;
 import javax.transaction.RollbackException;
@@ -8,6 +10,7 @@ import javax.transaction.SystemException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 public class Main {
 
@@ -17,24 +20,15 @@ public class Main {
 		SessionFactory buildSessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = buildSessionFactory.openSession();
 		session.beginTransaction();
-		
-		
-		
-		 UserDetails userDetails = session.get(UserDetails.class, 1);
-		 System.out.println(userDetails.getUserName());
-//        UserDetails details = new UserDetails();
-//        details.setUserName("New User");   // object is in Transient state
-        
-//        session.save(details);   // object is in Persistence state
-//        details.setUserName("Updated user");
+	
+//		Query<UserDetails> createQuery = session.createQuery("from UserDetails");
+		Query<UserDetails> createQuery = session.createQuery("from UserDetails where userId > 5");
+		List<UserDetails> list = createQuery.list();
 		
 		session.getTransaction().commit();
-		session.close();  // object is in Detached state
+		session.close(); 
+		System.out.println(list.size());
 		
-		session = buildSessionFactory.openSession();
-		session.beginTransaction();
-		session.update(userDetails);
-		session.close();
 	
 	}
 }
