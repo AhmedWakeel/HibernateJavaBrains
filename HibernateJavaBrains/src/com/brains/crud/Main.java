@@ -17,23 +17,16 @@ public class Main {
 		SessionFactory buildSessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = buildSessionFactory.openSession();
 		session.beginTransaction();
-		/*
-		for(int i =1;i<=10;i++)
-		{
-			UserDetails details = new UserDetails();
-			details.setUserName("User :"+i);
-			session.save(details);
-		}*/
 		
-		UserDetails userDetails = session.get(UserDetails.class, 5);
-		System.out.println(userDetails.getUserName());
-		userDetails.setUserName("wwwww");
-		session.update(userDetails);
-//		session.delete(userDetails);
-		
+        UserDetails details = new UserDetails();
+        details.setUserName("New User");   // object is in Transient state
+        
+        session.save(details);   // object is in Persistence state
+        details.setUserName("Updated user");
 		
 		session.getTransaction().commit();
-		session.close();
+		session.close();  // object is in Detached state
+		
 		 
 	
 	}
