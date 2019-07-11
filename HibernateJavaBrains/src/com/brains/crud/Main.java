@@ -18,16 +18,23 @@ public class Main {
 		Session session = buildSessionFactory.openSession();
 		session.beginTransaction();
 		
-        UserDetails details = new UserDetails();
-        details.setUserName("New User");   // object is in Transient state
+		
+		
+		 UserDetails userDetails = session.get(UserDetails.class, 1);
+		 System.out.println(userDetails.getUserName());
+//        UserDetails details = new UserDetails();
+//        details.setUserName("New User");   // object is in Transient state
         
-        session.save(details);   // object is in Persistence state
-        details.setUserName("Updated user");
+//        session.save(details);   // object is in Persistence state
+//        details.setUserName("Updated user");
 		
 		session.getTransaction().commit();
 		session.close();  // object is in Detached state
 		
-		 
+		session = buildSessionFactory.openSession();
+		session.beginTransaction();
+		session.update(userDetails);
+		session.close();
 	
 	}
 }

@@ -6,6 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
+//@org.hibernate.annotations.Entity(selectBeforeUpdate=true)
 @Table(name="USER_DETAILS")
 public class UserDetails {
 

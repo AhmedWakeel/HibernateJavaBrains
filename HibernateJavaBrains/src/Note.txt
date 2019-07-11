@@ -24,3 +24,5 @@
                     
 - @NotFound(action=NotFoundAction.IGNORE)  : this annotation is used when any class variable is not found in the class then hibernate will ignore
                                              
+- @org.hibernate.Entity(selectBeforeUpdate=true)  : if we not change the state of an persistence object and again update it in other session
+                                                   then this annotation will not fire a update query.                                          
