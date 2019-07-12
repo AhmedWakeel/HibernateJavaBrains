@@ -21,24 +21,14 @@ public class Main {
 		Session session = buildSessionFactory.openSession();
 		session.beginTransaction();
 	
-		String s ="5";
-		String s1 = "Name is :6";
-		/*Query<UserDetails> createQuery = session.createQuery("from UserDetails where userId > ?1 and userName = ?2");
-		createQuery.setInteger(1, Integer.parseInt(s));
-		createQuery.setString(2, s1);*/
+		Query<UserDetails> namedQuery = session.getNamedQuery("USER_DETAILS.byId");
+		namedQuery.setInteger("userId", 2);
+//		namedQuery.setString(0,"User 10");
+		List<UserDetails> list = namedQuery.list();
 
-		Query<UserDetails> createQuery = session.createQuery("from UserDetails where userId > :s and userName = :s1");
-		createQuery.setInteger("s", Integer.parseInt(s));
-		createQuery.setString("s1",s1);
-		
-		
-		List<UserDetails> list = createQuery.list();
-	/*	createQuery.setFirstResult(4);
-		createQuery.setMaxResults(4);*/
-		
 		session.getTransaction().commit();
 		session.close(); 
-		System.out.println(list.size());
+	System.out.println(list.size());
 	
 	}
 }
