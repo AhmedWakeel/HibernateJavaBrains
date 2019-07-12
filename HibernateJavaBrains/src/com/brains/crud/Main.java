@@ -23,7 +23,12 @@ public class Main {
 		session.beginTransaction();
 	
 		Criteria createCriteria = session.createCriteria(UserDetails.class);
-		Criteria add = createCriteria.add(Restrictions.eq("userName", "Name is :4"));
+		/*Criteria add = createCriteria.add(Restrictions.eq("userName", "Name is :4"))
+				                     .add(Restrictions.between("userId", 2, 10))
+				                     .add(Restrictions.like("userId", "%Name 1%"));*/
+		
+		     Criteria add = createCriteria.add(Restrictions.or(Restrictions.between("userId", 2, 5),Restrictions.between("userId", 4, 9)));
+		
 		List<UserDetails> list = add.list();
 		System.out.println(list.size());
 		
