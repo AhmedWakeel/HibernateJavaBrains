@@ -14,7 +14,10 @@
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.show_sql">true</property>
         
-        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+        <!-- Second Level Cache -->
+        <property name="cache.use_second_level_cache">true</property>
+        <property name="cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+        <!-- <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property> -->
         
         <!-- if value true then hibernate will print all the sql query -->
         <property name="show_sql">true</property>
