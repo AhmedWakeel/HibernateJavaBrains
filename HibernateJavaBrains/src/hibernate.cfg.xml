@@ -16,7 +16,8 @@
         
         <!-- Second Level Cache -->
         <property name="cache.use_second_level_cache">true</property>
-        <property name="cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+        <!-- <property name="cache.use_query_cache">true</property> -->
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
         <!-- <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property> -->
         
         <!-- if value true then hibernate will print all the sql query -->

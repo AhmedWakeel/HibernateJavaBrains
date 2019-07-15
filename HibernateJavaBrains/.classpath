@@ -23,23 +23,26 @@
 	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/hibernate-release-5.4.3.Final/lib/required/txw2-2.3.1.jar"/>
 	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/hibernate-release-5.4.3.Final/lib/jpa-metamodel-generator/hibernate-jpamodelgen-5.4.3.Final.jar"/>
 	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/mysql-connector-java.jar"/>
-	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcache jar/antlr-2.7.7.jar"/>
-	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcache jar/cdi-api-1.1.jar"/>
-	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcache jar/classmate-1.3.0.jar"/>
-	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcache jar/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcache jar/ehcache-2.10.1.jar"/>
-	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcache jar/el-api-2.2.jar"/>
-	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcache jar/geronimo-jta_1.1_spec-1.1.1.jar"/>
-	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcache jar/hibernate-commons-annotations-5.0.1.Final.jar"/>
-	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcache jar/hibernate-core-5.2.2.Final.jar"/>
-	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcache jar/hibernate-ehcache-5.2.2.Final.jar"/>
-	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcache jar/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcache jar/jandex-2.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcache jar/javassist-3.20.0-GA.jar"/>
-	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcache jar/javax.inject-1.jar"/>
-	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcache jar/jboss-interceptors-api_1.1_spec-1.0.0.Beta1.jar"/>
-	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcache jar/jboss-logging-3.3.0.Final.jar"/>
-	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcache jar/jsr250-api-1.0.jar"/>
-	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcache jar/slf4j-api-1.7.7.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcachejare/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcachejare/byte-buddy-1.9.10.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcachejare/classmate-1.3.4.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcachejare/dom4j-2.1.1.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcachejare/ehcache-2.10.6.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcachejare/FastInfoset-1.2.15.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcachejare/hibernate-commons-annotations-5.1.0.Final.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcachejare/hibernate-core-5.4.3.Final.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcachejare/hibernate-ehcache-5.4.3.Final.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcachejare/istack-commons-runtime-3.0.7.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcachejare/jandex-2.0.5.Final.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcachejare/javassist-3.24.0-GA.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcachejare/javax.activation-api-1.2.0.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcachejare/javax.persistence-api-2.2.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcachejare/jaxb-api-2.3.1.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcachejare/jaxb-runtime-2.3.1.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcachejare/jboss-logging-3.3.2.Final.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcachejare/jboss-transaction-api_1.2_spec-1.1.1.Final.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcachejare/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcachejare/stax-ex-1.8.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/hibernatejars/ehcachejare/txw2-2.3.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
