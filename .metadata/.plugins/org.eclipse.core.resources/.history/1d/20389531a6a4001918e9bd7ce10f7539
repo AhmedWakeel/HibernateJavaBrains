@@ -1,0 +1,25 @@
+package com.brains.crud;
+
+import javax.transaction.HeuristicMixedException;
+import javax.transaction.HeuristicRollbackException;
+import javax.transaction.RollbackException;
+import javax.transaction.SystemException;
+
+public class Main {
+
+	public static void main(String[] args) throws SecurityException, RollbackException, HeuristicMixedException, HeuristicRollbackException, SystemException
+	{
+
+		SessionFactory buildSessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = buildSessionFactory.openSession();
+		session.beginTransaction();
+	
+		Criteria createCriteria = session.createCriteria(UserDetails.class)
+				                         .setProjection(Projections.property("UserId"));
+		List list = createCriteria.list();
+		session.getTransaction().commit();
+		session.close(); 
+		
+	
+	}
+}

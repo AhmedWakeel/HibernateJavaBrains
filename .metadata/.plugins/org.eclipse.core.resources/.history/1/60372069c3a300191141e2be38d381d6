@@ -1,0 +1,28 @@
+
+- Hibernate is an ORM tool.
+
+
+@Transient    // if we make any field transient then hibernate will igonre the that field and will not create the column in the table.
+@Temporal(TemporalType.DATE)  // save only date and not time
+@Lob   // by default hibernate uses 255 characters but if want to save more than that then we can use Large object , BLOB binary large object , CLOB character large object
+
+- SessionFactory created only once per application , since it is a very expensive object but we can create session as many we want.
+- @GeneratedValue // this annotation is used to add values automatically to the primary key column
+
+- @Embedded : this annotation is used to indicate that this entity will be added into the other entity, it is used on the Object variable 
+              of the class.
+              
+- @Embaddable : this is used on the top the class name to indicate that this entity can be used or store into the another entity
+
+-@EmbeddedId :  if we want to make any Embeddable object as a primary key in a entity class then we have to use @EmbeddedId
+
+- @ElementCollection : this annotation is used to save the collection object in the entity class , but it will creates the new table in the database
+                       the new table name will be the combination of the current Entity class name and collection variable name
+                       
+- @JoinTable(name = "USER_ADDRESS" , joinColumns = @JoinColumn(name = "USER_ID")) : this annotation will create the table of the name specified in the 
+                    name , and columns    
+                    
+- @NotFound(action=NotFoundAction.IGNORE)  : this annotation is used when any class variable is not found in the class then hibernate will ignore
+                                             
+- @org.hibernate.Entity(selectBeforeUpdate=true)  : if we not change the state of an persistence object and again update it in other session
+                                                   then this annotation will not fire a update query                                          

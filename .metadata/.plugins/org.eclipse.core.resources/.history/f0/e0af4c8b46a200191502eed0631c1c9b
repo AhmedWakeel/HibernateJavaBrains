@@ -1,0 +1,6 @@
+package com.brains.hibernate;
+
+public class TwoWheeler extends Vehicle {
+
+	private String SteeringHandler;
+}
