@@ -13,6 +13,14 @@ public class Main {
 
 	public static void main(String[] args) throws SecurityException, RollbackException, HeuristicMixedException, HeuristicRollbackException, SystemException
 	{
+		
+		
+		Configuration configuration = new Configuration();
+		Configuration configure = configuration.configure();
+		SessionFactory buildSessionFactory2 = configure.buildSessionFactory();
+		Session openSession = buildSessionFactory2.openSession();
+		openSession.beginTransaction();
+		
 
 		SessionFactory buildSessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = buildSessionFactory.openSession();
